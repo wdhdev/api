@@ -27,12 +27,8 @@ router.get("/", async (req, res) => {
     routes.index(req, res);
 })
 
-router.get("/discord/invite-info", async (req, res) => {
-    routes.discord["invite-info"](req, res);
-})
-
-router.post("/discord/invite-info", async (req, res) => {
-    routes.discord["invite-info"](req, res);
+router.get("/discord/invite/:code", async (req, res) => {
+    routes.discord.invite(req, res);
 })
 
 router.post("/forms/contact", formLimiter, async (req, res) => {
@@ -43,23 +39,11 @@ router.get("/gravatar", limiter, async (req, res) => {
     routes.gravatar(req, res);
 })
 
-router.post("/gravatar", limiter, async (req, res) => {
-    routes.gravatar(req, res);
-})
-
-router.get("/lanyard", async (req, res) => {
+router.get("/lanyard/:id", async (req, res) => {
     routes.lanyard.index(req, res);
 })
 
-router.post("/lanyard", async (req, res) => {
-    routes.lanyard.index(req, res);
-})
-
-router.get("/lanyard/kv", async (req, res) => {
-    routes.lanyard.kv(req, res);
-})
-
-router.post("/lanyard/kv", async (req, res) => {
+router.get("/lanyard/kv/:id", async (req, res) => {
     routes.lanyard.kv(req, res);
 })
 

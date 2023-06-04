@@ -1,6 +1,6 @@
 module.exports = {
     "discord": {
-        "invite-info": require("../endpoints/discord/invite-info")
+        "invite": require("../endpoints/discord/invite")
     },
     "forms": {
         "contact": require("../endpoints/forms/contact")
@@ -8,7 +8,7 @@ module.exports = {
     "gravatar": require("../endpoints/gravatar"),
     "index": require("../endpoints/index"),
     "lanyard": {
-        "index": require("../endpoints/lanyard"),
+        "index": require("../endpoints/lanyard/index"),
         "kv": require("../endpoints/lanyard/kv")
     }
 }

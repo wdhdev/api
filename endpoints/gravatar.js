@@ -1,7 +1,7 @@
 module.exports = async (req, res) => {
     const gravatar = require("gravatar-url");
 
-    const email = req.query.email || req.body.email;
+    const email = req.query.email;
 
     if(!email) return res.status(400).send({ "message": "No email specified.", "code": "NO_EMAIL" });
     if(!validateEmail(email)) return res.status(400).send({ "message": "Invalid email specified.", "code": "INVALID_EMAIL" });
