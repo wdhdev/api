@@ -1,0 +1,18 @@
+{
+  "name": "wh-api",
+  "version": "1.0.0",
+  "description": "My personal API.",
+  "main": "index.js",
+  "author": "William Harrison",
+  "license": "MIT",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
+    "gravatar-url": "^3.1.0"
+  }
+}

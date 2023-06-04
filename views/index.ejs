@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>WH API</title>
+
+        <!-- Scripts -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="p-8 max-w-fit m-auto bg-zinc-900 text-white text-center">
+        <main>
+            <header class="mb-8">
+                <h2 class="text-3xl font-bold">Endpoints</h2>
+            </header>
+
+            <div class="p-8 bg-slate-800 rounded-lg mb-8">
+                <span class="text-sm font-medium px-2.5 py-1 rounded-full bg-green-900 text-green-300 mr-1">GET</span>
+                <code class="p-1 rounded-lg p-1 bg-gray-600">/gravatar?email=:email</code>
+                <p class="mt-4">Get a person's Gravatar using their email.</p>
+            </div>
+
+            <div class="p-8 bg-slate-800 rounded-lg mb-8">
+                <span class="text-sm font-medium px-2.5 py-1 rounded-full bg-blue-900 text-blue-300 mr-1">POST</span>
+                <code class="p-1 rounded-lg p-1 bg-gray-600">/gravatar</code>
+                <p class="mt-4">Get a person's Gravatar using their email.</p>
+
+                <h3 class="mt-4 font-semibold text-lg">Request Body</h3>
+                <p class="mt-2"><code class="p-1 rounded-lg p-1 mr-1 bg-gray-600">email</code> The email to get the Gravatar for.</p>
+            </div>
+
+            <div class="p-8 bg-slate-800 rounded-lg mb-8">
+                <span class="text-sm font-medium px-2.5 py-1 rounded-full bg-green-900 text-green-300 mr-1">GET</span>
+                <code class="p-1 rounded-lg p-1 bg-gray-600">/lanyard?id=:id</code>
+                <p class="mt-4">Get someone's Discord presence using the Lanyard API.</p>
+            </div>
+
+            <div class="p-8 bg-slate-800 rounded-lg mb-8">
+                <span class="text-sm font-medium px-2.5 py-1 rounded-full bg-blue-900 text-blue-300 mr-1">POST</span>
+                <code class="p-1 rounded-lg p-1 bg-gray-600">/lanyard</code>
+                <p class="mt-4">Get someone's Discord presence using the Lanyard API.</p>
+
+                <h3 class="mt-4 font-semibold text-lg">Request Body</h3>
+                <p class="mt-2"><code class="p-1 rounded-lg p-1 mr-1 bg-gray-600">id</code> The ID of the user who's presence to get.</p>
+            </div>
+
+            <div class="p-8 bg-slate-800 rounded-lg mb-8">
+                <span class="text-sm font-medium px-2.5 py-1 rounded-full bg-green-900 text-green-300 mr-1">GET</span>
+                <code class="p-1 rounded-lg p-1 bg-gray-600">/lanyard/kv?id=:id</code>
+                <p class="mt-4">Get someone's KV data using the Lanyard API.</p>
+            </div>
+
+            <div class="p-8 bg-slate-800 rounded-lg mb-8">
+                <span class="text-sm font-medium px-2.5 py-1 rounded-full bg-blue-900 text-blue-300 mr-1">POST</span>
+                <code class="p-1 rounded-lg p-1 bg-gray-600">/lanyard/kv</code>
+                <p class="mt-4">Get someone's KV data using the Lanyard API.</p>
+
+                <h3 class="mt-4 font-semibold text-lg">Request Body</h3>
+                <p class="mt-2"><code class="p-1 rounded-lg p-1 mr-1 bg-gray-600">id</code> The ID of the user who's KV data to get.</p>
+            </div>
+        </main>
+    </body>
+</html>
