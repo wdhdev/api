@@ -1,4 +1,7 @@
 module.exports = {
+    "discord": {
+        "invite-info": require("../endpoints/discord/invite-info")
+    },
     "forms": {
         "contact": require("../endpoints/forms/contact")
     },

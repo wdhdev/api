@@ -3,11 +3,6 @@ const { Router } = require("express");
 const router = Router();
 const routes = require("./routes");
 
-router.use(function(req, res, next) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    next();
-})
-
 const rateLimit = require("express-rate-limit");
 
 const limiter = rateLimit({
@@ -30,6 +25,14 @@ const formLimiter = rateLimit({
 
 router.get("/", async (req, res) => {
     routes.index(req, res);
+})
+
+router.get("/discord/invite-info", async (req, res) => {
+    routes.discord["invite-info"](req, res);
+})
+
+router.post("/discord/invite-info", async (req, res) => {
+    routes.discord["invite-info"](req, res);
 })
 
 router.post("/forms/contact", formLimiter, async (req, res) => {
