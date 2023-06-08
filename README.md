@@ -3,7 +3,7 @@ My personal API.
 
 **Backend**
 
-![Backend](https://skillicons.dev/icons?i=nodejs,express)
+![Backend](https://skillicons.dev/icons?i=nodejs,express,sentry)
 
 **Frontend**
 
