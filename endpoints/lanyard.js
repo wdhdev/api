@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
                     "hash": request.data.discord_user.avatar,
                     "decoration": request.data.discord_user.avatar_decoration
                 },
-                "display_name": request.data.discord_user.display_name,
+                "display_name": request.data.discord_user.global_name,
                 "username": request.data.discord_user.username,
                 "discriminator": request.data.discord_user.discriminator === "0" ? null : request.data.discord_user.discriminator,
                 "pomelo_username": request.data.discord_user.discriminator === "0" ? true : false
