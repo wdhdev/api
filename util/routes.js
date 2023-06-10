@@ -7,8 +7,5 @@ module.exports = {
     },
     "gravatar": require("../endpoints/gravatar"),
     "index": require("../endpoints/index"),
-    "lanyard": {
-        "index": require("../endpoints/lanyard/index"),
-        "kv": require("../endpoints/lanyard/kv")
-    }
+    "lanyard": require("../endpoints/lanyard")
 }

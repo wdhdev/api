@@ -40,11 +40,7 @@ router.get("/gravatar", limiter, async (req, res) => {
 })
 
 router.get("/lanyard/:id", async (req, res) => {
-    routes.lanyard.index(req, res);
-})
-
-router.get("/lanyard/kv/:id", async (req, res) => {
-    routes.lanyard.kv(req, res);
+    routes.lanyard(req, res);
 })
 
 module.exports = router;
