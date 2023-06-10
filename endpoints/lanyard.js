@@ -9,6 +9,7 @@ module.exports = async (req, res) => {
         "user": {
             "profile": {
                 "avatar": {
+                    "url": `https://cdn.discordapp.com/avatars/${request.data.discord_user.id}/${request.data.discord_user.avatar}`,
                     "hash": request.data.discord_user.avatar,
                     "decoration": request.data.discord_user.avatar_decoration
                 },
