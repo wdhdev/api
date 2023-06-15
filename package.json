@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "My personal API.",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "author": "William Harrison",
   "license": "MIT",
   "dependencies": {
