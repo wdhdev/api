@@ -4,16 +4,16 @@ const app = express();
 require("dotenv").config();
 
 import { Request } from "express";
-import { autoDiscoverNodePerformanceMonitoringIntegrations, Handlers, init as Sentry, Integrations } from "@sentry/node";
+import * as Sentry from "@sentry/node";
 import bodyParser from "body-parser";
 import cors from "cors";
 
-Sentry({
+Sentry.init({
     dsn: process.env.sentry_dsn,
     integrations: [
-        new Integrations.Http({ tracing: true }),
-        new Integrations.Express({ app }),
-        ...autoDiscoverNodePerformanceMonitoringIntegrations()
+        new Sentry.Integrations.Http({ tracing: true }),
+        new Sentry.Integrations.Express({ app }),
+        ...Sentry.autoDiscoverNodePerformanceMonitoringIntegrations()
     ],
     tracesSampleRate: 1.0
 })
@@ -21,8 +21,8 @@ Sentry({
 import router from "./util/router";
 const port = process.env.port;
 
-app.use(Handlers.requestHandler());
-app.use(Handlers.tracingHandler());
+app.use(Sentry.Handlers.requestHandler());
+app.use(Sentry.Handlers.tracingHandler());
 
 app.use(cors<Request>({ origin: "*" }));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,7 +30,7 @@ app.use(express.json());
 
 app.use("/", router);
 
-app.use(Handlers.errorHandler());
+app.use(Sentry.Handlers.errorHandler());
 
 app.listen(port, () => {
     console.log(`[API] Listening on Port: ${port}`);
