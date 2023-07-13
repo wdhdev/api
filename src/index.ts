@@ -33,5 +33,5 @@ app.use("/", router);
 app.use(Sentry.Handlers.errorHandler());
 
 app.listen(port, () => {
-    console.log(`[API] Listening on Port: ${port}`);
+    console.log(`Listening on Port: ${port}`);
 })
