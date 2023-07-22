@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 
-export default async (req: Request, res: Response) => {
-    const SendGrid = require("@sendgrid/mail");
+import SendGrid from "@sendgrid/mail";
 
+export default async (req: Request, res: Response) => {
     require("dotenv").config();
 
     // Invalid Hostname
