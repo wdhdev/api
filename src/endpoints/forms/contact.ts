@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 
 import SendGrid from "@sendgrid/mail";
+import * as Sentry from "@sentry/node";
 
 export default async (req: Request, res: Response) => {
     require("dotenv").config();
@@ -31,7 +32,10 @@ export default async (req: Request, res: Response) => {
         await SendGrid.send(email);
 
         res.status(200).json({ message: "Your contact form has been submitted.", code: "FORM_SUBMITTED" });
-    } catch {
+    } catch(err) {
+        Sentry.captureException(err);
+        console.error(err);
+
         res.status(500).json({ message: "An error occurred.", code: "SERVER_ERROR" });
     }
 }
