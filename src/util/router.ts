@@ -27,10 +27,6 @@ router.get("/", async (req: Request, res: Response) => {
     routes.index(req, res);
 })
 
-router.get("/discord/invite/:code", async (req: Request, res: Response) => {
-    routes.discord.invite(req, res);
-})
-
 router.post("/forms/contact", formLimiter, async (req: Request, res: Response) => {
     routes.forms.contact(req, res);
 })
