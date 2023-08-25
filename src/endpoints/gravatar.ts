@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import gravatarUrl from "gravatar-url";
 
 export default async (req: Request, res: Response) => {
-    const { email } = req.body;
+    const email = req.query.email as string;
 
     if(!email) return res.status(400).send({ message: "No email specified.", code: "NO_EMAIL" });
     if(!validateEmail(email)) return res.status(400).send({ message: "Invalid email specified.", code: "INVALID_EMAIL" });
