@@ -35,8 +35,4 @@ router.get("/gravatar", limiter, async (req: Request, res: Response) => {
     routes.gravatar(req, res);
 })
 
-router.get("/lanyard/:id", async (req: Request, res: Response) => {
-    routes.lanyard(req, res);
-})
-
 export default router;

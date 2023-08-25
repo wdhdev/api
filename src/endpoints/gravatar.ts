@@ -9,7 +9,7 @@ export default async (req: Request, res: Response) => {
 
     const gravatarURL = gravatar(email);
 
-    res.status(200).json({ url: gravatarURL });
+    res.status(200).json({ email: email, hash: gravatarURL.replace("https://gravatar.com/avatar/", ""), url: gravatarURL });
 
     function validateEmail(input: String) {
         const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
