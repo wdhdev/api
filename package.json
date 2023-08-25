@@ -1,6 +1,6 @@
 {
   "name": "wh-api",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "My personal API.",
   "main": "dist/index.js",
   "scripts": {
@@ -11,14 +11,13 @@
   "license": "MIT",
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
-    "@sentry/node": "^7.58.0",
+    "@sentry/node": "^7.64.0",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "express-rate-limit": "^6.7.1",
-    "gravatar-url": "^3.1.0",
-    "node-fetch": "^2.6.7"
+    "express-rate-limit": "^6.9.0",
+    "gravatar-url": "^3.1.0"
   },
   "devDependencies": {
     "@sentry/types": "^7.58.0",

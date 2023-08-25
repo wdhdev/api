@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import gravatar from "gravatar-url";
+import gravatarUrl from "gravatar-url";
 
 export default async (req: Request, res: Response) => {
     const email: any = req.query.email;
@@ -7,15 +7,13 @@ export default async (req: Request, res: Response) => {
     if(!email) return res.status(400).send({ message: "No email specified.", code: "NO_EMAIL" });
     if(!validateEmail(email)) return res.status(400).send({ message: "Invalid email specified.", code: "INVALID_EMAIL" });
 
-    const gravatarURL = gravatar(email);
+    const gravatarURL = gravatarUrl(email);
 
     res.status(200).json({ email: email, hash: gravatarURL.replace("https://gravatar.com/avatar/", ""), url: gravatarURL });
+}
 
-    function validateEmail(input: String) {
-        const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+function validateEmail(input: string): boolean {
+    const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-        if(input.match(regex)) return true;
-
-        return false;
-    }
+    return input.match(regex) ? true : false;
 }
