@@ -1,12 +1,13 @@
 import express from "express";
 const app = express();
 
-require("dotenv").config();
-
 import { Request } from "express";
 import * as Sentry from "@sentry/node";
 import bodyParser from "body-parser";
 import cors from "cors";
+
+require("dotenv").config();
+const port = 3000;
 
 Sentry.init({
     dsn: process.env.sentry_dsn,
@@ -19,7 +20,6 @@ Sentry.init({
 })
 
 import router from "./util/router";
-const port = process.env.port;
 
 app.use(Sentry.Handlers.requestHandler());
 app.use(Sentry.Handlers.tracingHandler());
