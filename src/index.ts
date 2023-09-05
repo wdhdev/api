@@ -7,7 +7,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 
 require("dotenv").config();
-const port = 3000;
+const port = process.env.port || 3000;
 
 Sentry.init({
     dsn: process.env.sentry_dsn,
