@@ -27,6 +27,7 @@ app.use(Sentry.Handlers.tracingHandler());
 app.use(cors<Request>({ origin: "*" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+app.set("trust proxy", true);
 
 app.use("/", router);
 
