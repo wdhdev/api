@@ -8,7 +8,11 @@ export default async (req: Request, res: Response) => {
     if(!email) return res.status(400).send({ message: "No email specified.", code: "NO_EMAIL" });
     if(!validate.email(email)) return res.status(400).send({ message: "Invalid email specified.", code: "INVALID_EMAIL" });
 
-    const gravatarURL = gravatar(email.toLowerCase());
+    try {
+        const gravatarURL = gravatar(email.toLowerCase());
 
-    res.status(200).json({ email: email.toLowerCase(), hash: gravatarURL.replace("https://gravatar.com/avatar/", ""), url: gravatarURL });
+        res.status(200).json({ email: email.toLowerCase(), hash: gravatarURL.replace("https://gravatar.com/avatar/", ""), url: gravatarURL });
+    } catch(err) {
+        res.status(500).json({ message: err.message, code: "INTERNAL_SERVER_ERROR" });
+    }
 }
