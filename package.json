@@ -1,6 +1,6 @@
 {
   "name": "wh-api",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "My personal API.",
   "main": "dist/index.js",
   "scripts": {
